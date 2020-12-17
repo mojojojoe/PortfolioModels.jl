@@ -14,7 +14,7 @@ type Portfolio
 end
 
 export Portfolio, 
-       stock_returns,
+       returns,
        read_monthlies,
        modelparams,
        globalmin,

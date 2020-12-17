@@ -1,8 +1,8 @@
 function build_globalmin{T <: Union(ASCIIString, UTF8String)}(list::Array{T})
 
-  stocks  = stock_returns(list)
-  params  = modelparams(stocks)
-  weights = rowsums(DataArray(inv(params[5]))) / sum(inv(params[5]))
+  returns  = returns(list)
+  params  = modelparams(returns)
+  weights = rowsums(Array(inv(params[5]))) / sum(inv(params[5]))
 
   port = Portfolio(params[1],
                    params[2],
